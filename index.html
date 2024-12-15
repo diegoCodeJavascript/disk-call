@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Call - Controle de Atendimento e Status</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logotipo.png" alt="Disk Call Logo">
+        <h1>Disk Call - Controle de Atendimento e Status</h1>
+        <p>Solução para acompanhar status de chamada de call center</p>
+    </header>
+    
+    <main>
+        <div class="actions">
+            <button id="openFormBtn">Abrir Chamado</button>
+        </div>
+        
+        <div id="formModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeFormBtn">&times;</span>
+                <h2>Abrir Chamado</h2>
+                <form id="callForm">
+                    <label for="clientName">Nome do Cliente</label>
+                    <input type="text" id="clientName" required>
+
+                    <label for="details">Detalhes Relatados</label>
+                    <textarea id="details" rows="4" required></textarea>
+
+                    <label for="status">Status</label>
+                    <select id="status" required>
+                        <option value="Em Atendimento">Em Atendimento</option>
+                        <option value="Solucionado">Solucionado</option>
+                        <option value="Transferido">Transferido para Outro Setor</option>
+                        <option value="Não Solucionado">Não Solucionado</option>
+                        <option value="Sem Informações">Sem Informações do Caso</option>
+                        <option value="Retornar Contato">Retornar Contato em Breve</option>
+                    </select>
+
+                    <button type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="search">
+            <input type="text" id="searchBox" placeholder="Buscar por nome, data ou status">
+        </div>
+
+        <div class="table-container">
+            <table id="callTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Detalhes</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="statistics">
+            <h3>Estatísticas de Chamados</h3>
+            <ul id="statsList"></ul>
+        </div>
+    </main>
+
+    <footer>
+        Desenvolvido por Diego Lamana
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
